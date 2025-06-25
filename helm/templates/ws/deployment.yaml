@@ -166,7 +166,7 @@ spec:
           lifecycle: {{- include "common.tplvalues.render" (dict "value" .Values.ws.lifecycleHooks "context" $) | nindent 12 }}
           {{- end }}
           {{- if .Values.ws.extraVolumeMounts }}
-          {{- include "common.tplvalues.render" (dict "value" .Values.ws.extraVolumeMounts "context" $) | nindent 12 }}
+          volumeMounts: {{- include "common.tplvalues.render" (dict "value" .Values.ws.extraVolumeMounts "context" $) | nindent 12 }}
           {{- end }}
         {{- if .Values.ws.sidecars }}
         {{- include "common.tplvalues.render" ( dict "value" .Values.ws.sidecars "context" $) | nindent 8 }}
